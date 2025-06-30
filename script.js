@@ -3,6 +3,8 @@ let currentSlide = 0;
 const slides = document.querySelectorAll('.slide');
 const totalSlides = slides.length;
 const music = document.getElementById('slideshowMusic');
+const toggleBtn = document.getElementById('toggleMusicBtn');
+const toggleIcon = toggleBtn.querySelector('i');
 let slideInterval = null;
 
 function showSlide(index) {
@@ -31,6 +33,28 @@ function pauseSlideshow() {
     if (music) music.pause();
   }
 }
+
+toggleBtn.addEventListener('click', function() {
+  if (music.paused) {
+    music.play();
+    toggleIcon.classList.remove('fa-play');
+    toggleIcon.classList.add('fa-pause');
+    toggleBtn.innerHTML = '<i class="fas fa-pause"></i> Pause';
+  } else {
+    music.pause();
+    toggleIcon.classList.remove('fa-pause');
+    toggleIcon.classList.add('fa-play');
+    toggleBtn.innerHTML = '<i class="fas fa-play"></i> Play';
+  }
+});
+
+// Optional: update button if user pauses/plays music outside the button
+music.addEventListener('play', function() {
+  toggleBtn.innerHTML = '<i class="fas fa-pause"></i> Pause';
+});
+music.addEventListener('pause', function() {
+  toggleBtn.innerHTML = '<i class="fas fa-play"></i> Play';
+});
 
 // Button event listeners
 document.getElementById('playSlideshowBtn').addEventListener('click', playSlideshow);
