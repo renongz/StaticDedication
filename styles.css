@@ -332,7 +332,7 @@ main section {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #f9a8d4;
+    background-color: transparent;
 }
 
 .slide.active {
@@ -782,7 +782,7 @@ slideshow-container {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #f9a8d4; /* Light pink background */
+    background-color: transparent; /* Changed to transparent */
 }
 
 .slide.active {
@@ -1140,7 +1140,7 @@ h1, h2, .script-font {
 }
 
 .slideshow-frame {
-  background: rgba(255,255,255,0.85);
+  background: transparent;
   border-radius: 24px;
   box-shadow: 0 8px 32px rgba(180, 120, 200, 0.13);
   padding: 32px 18px 24px 18px;
